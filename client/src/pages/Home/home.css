@@ -1,0 +1,9 @@
+input {
+  max-width: 650px !important;
+  width: 100% !important;
+  margin: 0px auto 0 auto;
+  border-radius: 25px;
+  font-size: 15px;
+  border-color: lightgray;
+}
+
