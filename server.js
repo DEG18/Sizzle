@@ -10,7 +10,7 @@ const app = express();
 
 
 // setup the mongodb database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/passportJwtExample", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://deg-18:Mongodbalex@1z@cluster0.42abh.mongodb.net/sizzle?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
