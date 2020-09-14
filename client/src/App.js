@@ -1,10 +1,9 @@
-import React, { useEffect }from 'react';
-import { useGlobalContext } from "./context/GlobalContext"
-import AuthenticatedApp from "./components/AuthenticatedApp"
-import UnauthenticatedApp from "./components/UnauthenticatedApp"
-import './App.css';
+import React, { useEffect } from "react";
+import { useGlobalContext } from "./context/GlobalContext";
+import AuthenticatedApp from "./components/AuthenticatedApp";
+import UnauthenticatedApp from "./components/UnauthenticatedApp";
+import "./App.css";
 import { LOGIN } from "./context/actions";
-
 
 function App() {
   const [state, dispatch] = useGlobalContext();
@@ -14,11 +13,10 @@ function App() {
     if (user) {
       dispatch({
         type: LOGIN,
-        user: user
-      })
+        user: user,
+      });
     }
-
-  }, [])
+  }, []);
 
   return (
     <div className="App">
