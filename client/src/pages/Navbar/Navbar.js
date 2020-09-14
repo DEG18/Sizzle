@@ -42,7 +42,10 @@ const Navbar = () => {
             className="form-inline my-2 my-lg-0 collapse navbar-collapse"
             id="navbarSupportedContent"
           >
-            <div className="btn btn-outline-warning text-light my-2 my-sm-0">
+            <div
+              style="text-decoration:none"
+              className="btn btn-outline-warning text-light my-2 my-sm-0"
+            >
               <HomeIcon />
             </div>
             <div className="btn btn-outline-warning text-light my-2 my-sm-0">

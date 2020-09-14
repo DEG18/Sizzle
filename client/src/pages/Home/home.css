@@ -38,6 +38,7 @@ input {
 
 .sweet {
   background-color: rgb(243, 20, 20);
+  text-decoration: none;
 }
 
 .sweet:hover {
@@ -46,6 +47,7 @@ input {
 
 .salty {
   background-color: rgb(243, 102, 20);
+  text-decoration: none;
 }
 
 .salty:hover {
@@ -54,6 +56,7 @@ input {
 
 .savory {
   background-color: rgb(243, 228, 20);
+  text-decoration: none;
 }
 
 .savory:hover {
@@ -62,6 +65,7 @@ input {
 
 .sour {
   background-color: rgb(243, 20, 20);
+  text-decoration: none;
 }
 
 .sour:hover {
