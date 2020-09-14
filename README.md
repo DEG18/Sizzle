@@ -22,8 +22,13 @@
 
 ### Installation
 
-- npm install
-- npm start
+- Run the following code in with the main folder, and also within the "client" folder:
+```
+npm install
+```
+```
+npm start
+```
 
 - [Heroku](https://sizzle-app.herokuapp.com/)
 - [GitHub](https://github.com/DEG18/Sizzle)
