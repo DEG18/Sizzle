@@ -59,6 +59,3 @@ const Home = ({ handleSubmit, history }) => {
 };
 
 export default Home;
-
-
-
