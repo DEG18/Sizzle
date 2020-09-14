@@ -10,7 +10,7 @@ const Home = ({ handleSubmit, history }) => {
   };
   return (
     <div>
-      <h1>Home Page!</h1>
+      <h1>Sizzle</h1>
         <form
           className="search-form"
           onSubmit={(e) => handleSubmit(e, history, searchEntry)}

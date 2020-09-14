@@ -1,0 +1,10 @@
+#cardbox {
+   max-width: 540px;
+
+}
+card-img {
+    vertical-align: middle;
+}
+card-title {
+    vertical-align: auto;
+}
