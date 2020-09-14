@@ -11,6 +11,12 @@ const Home = ({ handleSubmit, history }) => {
   };
   return (
     <div>
+<<<<<<< HEAD
+      <h1>Sizzle</h1>
+        <form
+          className="search-form"
+          onSubmit={(e) => handleSubmit(e, history, searchEntry)}
+=======
       <div>
         <img src={Logo} alt="sizzle logo" className="logo" />
       </div>
@@ -30,6 +36,7 @@ const Home = ({ handleSubmit, history }) => {
           type="submit"
           className={`search-button ${searchEntry.trim() ? "active" : null}`}
           disabled={!searchEntry.trim()}
+>>>>>>> master
         >
           <svg height="32" width="32">
             <path
