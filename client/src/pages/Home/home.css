@@ -7,19 +7,6 @@ input {
   border-color: lightgray;
 }
 
-<<<<<<< HEAD
-/* h1 {
-  width: 462px;
-  height: 118px;
-  x: 489px;
-  y: 278px;
-  margin: 0px auto 0 auto;
-
-  color: red;
-
-
-} */
-=======
 .logo {
   width: 25rem;
   margin: 3rem;
@@ -80,4 +67,3 @@ input {
 .sour:hover {
   background-color: rgba(243, 20, 20, 0.295);
 }
->>>>>>> master
