@@ -8,12 +8,17 @@ const passport = require("./authentication/passport");
 const PORT = process.env.PORT || 4000;
 const app = express();
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 
 // setup the mongodb database
 mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://deg-18:Mongodbalex@1z@cluster0.42abh.mongodb.net/sizzle?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
+
 
 // middlewares for accepting post requests
 app.use(express.urlencoded({ extended: true }));
