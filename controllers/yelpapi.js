@@ -9,12 +9,12 @@ const client = yelp.client(process.env.API_KEY);
 
 // It also makes sure that the books returned from the API all contain a title, author, link, description, and image
 module.exports = function (app) {
-    app.get("/", (req, res) => {
+  app.get("/", (req, res) => {
     // res.sendFile(path.join(__dirname, "../public/main.html"));
     let restaurants;
     client
       .search({
-        term: "vegan",
+        term: "",
         location: "new york, ny",
       })
       .then((response) => {
@@ -27,8 +27,8 @@ module.exports = function (app) {
             address: business.location.display_address,
             phone: business.display_phone,
             image: business.image_url,
-            };
-            console.log(obj);
+          };
+          console.log(obj);
           return obj;
         });
         var hbsObject = {
@@ -41,6 +41,4 @@ module.exports = function (app) {
       });
     // res.render("main", restaurant);
   });
-
-
 };
