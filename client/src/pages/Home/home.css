@@ -23,30 +23,48 @@ input {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 30px;
+  color: brown;
 }
 
 .search-button {
   color: black;
   border-radius: 4rem;
-  background-color: black;
+  background-color: rgba(61, 5, 5, 0.945);
   height: 50px;
   width: 50px;
   float: auto;
   margin-left: -60px;
+  margin-bottom: ;
 }
 
 .sweet {
   background-color: rgb(243, 20, 20);
 }
 
+.sweet:hover {
+  background-color: rgba(243, 20, 20, 0.295);
+}
+
 .salty {
   background-color: rgb(243, 102, 20);
+}
+
+.salty:hover {
+  background-color: rgba(243, 102, 20, 0.247);
 }
 
 .savory {
   background-color: rgb(243, 228, 20);
 }
 
+.savory:hover {
+  background-color: rgba(243, 228, 20, 0.226);
+}
+
 .sour {
   background-color: rgb(243, 20, 20);
+}
+
+.sour:hover {
+  background-color: rgba(243, 20, 20, 0.295);
 }
