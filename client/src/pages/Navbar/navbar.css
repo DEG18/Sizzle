@@ -1,0 +1,21 @@
+.logo {
+  width: 15rem;
+  margin: 3rem;
+}
+
+.sizzle {
+  font-family: "Pacifico", cursive;
+  font-size: 40px;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.right {
+  float: right;
+}
+
+.btn {
+  margin: 1rem;
+}

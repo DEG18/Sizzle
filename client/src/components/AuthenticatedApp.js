@@ -1,48 +1,42 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context/GlobalContext";
-import {
-  LOGOUT, GET_WELCOME
-} from "../context/actions";
-import Home from "../pages/Home/home"
-import Navbar from "../pages/Navbar/Navbar"
+import { LOGOUT, GET_WELCOME } from "../context/actions";
+import Home from "../pages/Home/home";
+import Nav from "../pages/Navbar/Navbar";
 import axios from "axios";
-import { BrowserRouter as Router} from "react-router-dom";
-
+import { BrowserRouter as Router } from "react-router-dom";
 
 const AuthenticatedApp = () => {
   const [state, dispatch] = useGlobalContext();
 
-  const getWelcome = async() => {
+  const getWelcome = async () => {
     const { data } = await axios.get("/api/home", {
       headers: {
-        Authorization: `Bearer ${state.user.token}`
-      }
+        Authorization: `Bearer ${state.user.token}`,
+      },
     });
-    
-    console.log(data)
+
+    console.log(data);
     dispatch({
       type: GET_WELCOME,
-      welcomeMessage: data
+      welcomeMessage: data,
     });
-  }
+  };
   // const getHome = async () => {
   //   const
   // }
 
-
-  useEffect(()=>{
+  useEffect(() => {
     getWelcome();
-  }, [])
-
-
+  }, []);
 
   return (
     <div>
       <Router>
-        <Navbar/>
+        <Nav />
       </Router>
     </div>
-  )
-}
+  );
+};
 
 export default AuthenticatedApp;

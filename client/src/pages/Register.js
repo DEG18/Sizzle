@@ -36,6 +36,7 @@ const Register = () => {
   const styles = {
     center: {
       textAlign: "center",
+      margin: "2rem",
     },
     widths: {
       width: "100%",
@@ -90,7 +91,7 @@ const Register = () => {
           <div className="justify-content-center">
             <button
               type="submit"
-              className="btn btn-primary "
+              className="btn btn-warning "
               style={styles.widths}
             >
               REGISTER

@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HomeIcon = () => {
-    return (
-        <Link to="/">Home</Link>
-    )
-}
+  return (
+    <div>
+      <Link className="" to="/">
+        Home
+      </Link>
+    </div>
+  );
+};
 
 export default HomeIcon;
