@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // routes
-app.use("/", routes);
+app.use(routes);
 
 // start the server
 app.listen(PORT, () => {
