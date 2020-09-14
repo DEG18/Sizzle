@@ -7,9 +7,5 @@ const authRoutes = require("../authentication/authRoutes");
 Router.use("/api", passport.authenticate('jwt', {session: false}), apiRoutes);
 Router.use("/auth", authRoutes);
 
-// If no API routes are hit, send the React app
-router.use((req, res) =>
-  res.sendFile(path.join(__dirname, "../client/build/index.html"))
-);
 
 module.exports = Router;
