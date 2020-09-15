@@ -5,7 +5,8 @@ const authRoutes = require("../authentication/authRoutes");
 const yelpRoutes = require("./yelpRooutes")
 
 // API Routes
-Router.use("/api", passport.authenticate('jwt', {session: false}), apiRoutes);
+// Router.use("/api", passport.authenticate('jwt', { session: false }), apiRoutes);
+Router.use("/api", apiRoutes);
 Router.use("/auth", authRoutes);
 Router.use("/yelp", yelpRoutes)
 

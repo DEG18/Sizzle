@@ -3,7 +3,8 @@ import {
   LOGIN,
   LOGOUT,
   GET_REST,
-  GET_WELCOME
+  GET_WELCOME,
+  GET_COLLECTION
 } from "./actions";
 
 // create the context
@@ -17,6 +18,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         restaurants: action.restaurants
+      }
+    case GET_COLLECTION:
+      return {
+        ...state,
+        collection: action.collection
       }
     case LOGOUT: 
       return {
@@ -42,7 +48,8 @@ const GlobalProvider = ({value=[], ...props}) => {
   const [state, dispatch] = useReducer(reducer, {
     user: {},
     welcomeMessage: "",
-    restaurants:[]
+    restaurants: [],
+    collection:[]
   })
   return <Provider value={[state,dispatch]} {...props} />
 }

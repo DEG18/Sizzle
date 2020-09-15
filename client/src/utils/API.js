@@ -12,5 +12,14 @@ export default {
                 }
             }
         );
-  }
+    },
+    saveCollection: function () {
+        return axios.post("/api/collection");
+    },
+    deleteCollection: function () {
+        return axios.delete("/api/collection");
+    },
+    getCollection: function () {
+        return axios.get("/api/collection");
+    },
 };

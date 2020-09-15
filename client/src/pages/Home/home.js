@@ -15,7 +15,7 @@ const Home = () => {
 
   const [state, dispatch] = useGlobalContext();
 
-  const [term, setTerm] = useState("sweet");
+  const [term, setTerm] = useState("salty");
   const [location, setLocation] = useState("New York");
   let yelpdata;
   // const getRest = async() => {
@@ -34,15 +34,16 @@ const Home = () => {
           restaurants: res.data
       })
     });
-  }, [])
+  }, [term, location])
   console.log(state.restaurants);
   const termRef = useRef();
   const locationRef = useRef();
-  const restaurantRef = useRef();
 
   const handleFormSubmit = event => {
     event.preventDefault();
     // getRest();
+    setTerm(termRef.current.value);
+    setLocation(locationRef.current.value);
   };
 
 
@@ -72,7 +73,6 @@ const Home = () => {
         <button
           type="submit"
           className="search-button"
-          disabled={!term.trim() && !location.trim()}
         >
           <svg height="32" width="32">
             <path

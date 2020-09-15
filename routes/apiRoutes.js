@@ -1,5 +1,7 @@
 const Router = require("express").Router();
+const collectionController = require("../controllers/collectionController");
 const userController = require("../controllers/userController");
+
 
 // routes that we want to protect
 Router.get("/welcome", (req, res) => {
@@ -7,5 +9,8 @@ Router.get("/welcome", (req, res) => {
 });
 
 Router.route("/users").post(userController.createNew);
+
+Router.route("/collection").post(collectionController.createNew).get(collectionController.findAll);
+
 
 module.exports = Router;
