@@ -30,7 +30,12 @@
 
 ### Usage
 
--
+- Register to set up a user profile
+- Login with credentials
+- Search what flavor you're feeling, and where you're located
+- Home page will populate with restaurants recommendations based on flavor/location
+- "Save" button to favorite a place, adds to "Collections" tab
+- "Collections" tab has option to delete place
 
 ### License
 
