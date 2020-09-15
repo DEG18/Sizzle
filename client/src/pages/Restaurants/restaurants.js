@@ -1,7 +1,42 @@
 import React from "react"
+import API from "../../utils/API";
+import { useGlobalContext } from "../../context/GlobalContext";
+import { SET_COLLECTION } from "../../context/actions";
 
 function Restaurants(props) {
     // console.log(props.data[0]);
+    const [state, dispatch] = useGlobalContext();
+    // var collections = new Array();
+    // useEffect(()=>{
+    //     // getRest();
+    //     API.saveCollection()
+    //     .then((res) => {
+    //         dispatch({
+    //         type: GET_COLLECTION,
+    //         collection: res.data
+    //     })
+    //     });
+    // }, [])
+    const handleRestSave = (id) => {
+        const restaurant = state.restaurants.find(book => book.key === id);
+        console.log(restaurant)
+        API.saveCollection({
+            key: restaurant.key,
+            name: restaurant.name,
+            url: restaurant.url,
+            rating: restaurant.rating,
+            address: restaurant.address.join(", "),
+            phone: restaurant.phone,
+            image: restaurant.image,
+        }).then((res) => {
+            console.log(res.data);
+            dispatch({
+                type: SET_COLLECTION,
+                restaurant: res.data
+            })
+    }).catch(err => console.log(err));
+    };
+
     var x = props.data[0];
     console.log(x)
     var restaurants = new Array();
@@ -29,7 +64,7 @@ function Restaurants(props) {
                                     lead-in to additional content. This content is a little bit
                                     longer.
                             </p>
-                            <button data-index={index}>SAVE</button>
+                            <button data-index={index} onClick={() => handleRestSave(restaurant.key)}>SAVE</button>
                         </div>
                         </div>
                     </div>

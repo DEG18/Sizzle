@@ -17,7 +17,7 @@ const Collections = () => {
           type: GET_COLLECTION,
           collection: res.data
       })
-    });
+    }).catch(err => console.log(err));
   }, [])
   
   state.collection.map((restaurant) => {

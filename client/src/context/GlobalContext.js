@@ -4,7 +4,8 @@ import {
   LOGOUT,
   GET_REST,
   GET_WELCOME,
-  GET_COLLECTION
+  GET_COLLECTION,
+  SET_COLLECTION
 } from "./actions";
 
 // create the context
@@ -23,6 +24,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         collection: action.collection
+      }
+    case SET_COLLECTION:
+      return {
+        ...state,
+        collection: [...state.collection, action.restaurant ]
       }
     case LOGOUT: 
       return {
