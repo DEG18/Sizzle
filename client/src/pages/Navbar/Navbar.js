@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <div className="container-fluid">
-      <nav className="right navbar navbar-expand-lg text-light navbar-dark bg-dark">
+      <nav className="right navbar navbar-expand-lg text-light">
         <div className="sizzle">Sizzle</div>
         <button
           className="sidenav navbar-toggler"
@@ -42,7 +42,7 @@ const Navbar = () => {
             className="form-inline my-2 my-lg-0 collapse navbar-collapse"
             id="navbarSupportedContent"
           >
-            <div className="btn btn-outline-warning text-light my-2 my-sm-0">
+            <div className="btn home btn-outline-warning text-light my-2 my-sm-0">
               <HomeIcon />
             </div>
             <div className="btn btn-outline-warning text-light my-2 my-sm-0">
