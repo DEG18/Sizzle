@@ -11,6 +11,6 @@ Router.get("/welcome", (req, res) => {
 Router.route("/users").post(userController.createNew);
 
 Router.route("/collection").post(collectionController.createNew).get(collectionController.findAll);
-
+Router.route("/:id").delete(collectionController.remove);
 
 module.exports = Router;

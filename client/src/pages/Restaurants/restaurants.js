@@ -23,6 +23,7 @@ function Restaurants(props) {
                 type: SET_COLLECTION,
                 restaurant: res.data
             })
+            console.log(res.data);
     }).catch(err => console.log(err));
     };
 
