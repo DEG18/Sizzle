@@ -5,7 +5,8 @@ import {
   GET_REST,
   GET_WELCOME,
   GET_COLLECTION,
-  SET_COLLECTION
+  SET_COLLECTION,
+  REMOVE_COLLECTION
 } from "./actions";
 
 // create the context
@@ -45,6 +46,13 @@ const reducer = (state, action) => {
         ...state,
         welcomeMessage: action.welcomeMessage
       }
+    case REMOVE_COLLECTION:
+      return {
+        ...state,
+        collection: state.collection.filter((post) => {
+          return post.key !== action.key;
+        }),
+      };
     default:
       return state;
   }

@@ -19,5 +19,11 @@ module.exports = {
     findAll: async (req, res) => {
         const newCollection = await db.Collection.find();
     res.json(newCollection);
-    }
+    },
+    remove: function (req, res) {
+    db.Collection.find({ key: req.params.id })
+      .then((dbModel) => console.log(dbModel))
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+    },
 }

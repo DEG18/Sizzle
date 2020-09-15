@@ -16,8 +16,8 @@ export default {
     saveCollection: function (restaurant) {
         return axios.post("/api/collection",restaurant);
     },
-    deleteCollection: function () {
-        return axios.delete("/api/collection");
+    deleteCollection: function (id) {
+        return axios.delete("/api/" + id);
     },
     getCollection: function () {
         return axios.get("/api/collection");

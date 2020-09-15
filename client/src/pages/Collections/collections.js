@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import "./collections.css";
 import API from "../../utils/API";
 import { useGlobalContext } from "../../context/GlobalContext";
-import { GET_COLLECTION } from "../../context/actions";
+import { GET_COLLECTION, REMOVE_COLLECTION } from "../../context/actions";
+
 
 const Collections = () => {
   const [state, dispatch] = useGlobalContext();
@@ -18,6 +19,17 @@ const Collections = () => {
       })
     }).catch(err => console.log(err));
   }, [])
+
+  const handleRestDelete = (id) => {
+        // const restaurant = state.restaurants.find(rest => rest.key === id);
+        console.log(id);
+        API.deleteCollection(id).then(() => {
+        dispatch({
+          type: REMOVE_COLLECTION,
+          key: id,
+        });
+      }).catch(err => console.log(err));
+    };
   
   state.collection.map((restaurant) => {
     restaurants.push(
@@ -41,7 +53,7 @@ const Collections = () => {
                 <a href="tel:5554280940">{restaurant.phone}</a>
                 <p className="card-text">
                 </p>
-                <button type="button" class="btn delete btn-danger">
+                <button type="button" class="btn delete btn-danger" onClick={() => handleRestDelete(restaurant.key)}>
                   Delete
                 </button>
               </div>
