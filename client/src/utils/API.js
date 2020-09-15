@@ -13,8 +13,8 @@ export default {
             }
         );
     },
-    saveCollection: function () {
-        return axios.post("/api/collection");
+    saveCollection: function (restaurant) {
+        return axios.post("/api/collection",restaurant);
     },
     deleteCollection: function () {
         return axios.delete("/api/collection");
