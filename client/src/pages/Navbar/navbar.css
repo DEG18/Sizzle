@@ -10,6 +10,7 @@
 
 .navbar {
   width: 100%;
+  background-color: black;
 }
 
 .right {
@@ -20,4 +21,8 @@
   margin: 1rem;
 
   text-decoration: none;
+}
+
+.home {
+  margin-left: 50px;
 }
