@@ -69,7 +69,7 @@ const Login = () => {
                 Create account? <Link to="/register">Register</Link>
               </p> */}
               <div className="form-group">
-                <label for="exampleInputEmail1">Username</label>
+                <label htmlFor="exampleInputEmail1">Username</label>
                 <input
                   type="email"
                   className="form-control"
@@ -79,7 +79,7 @@ const Login = () => {
                 />
               </div>
               <div className="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label htmlFor="exampleInputPassword1">Password</label>
                 <input
                   type="password"
                   className="form-control"
