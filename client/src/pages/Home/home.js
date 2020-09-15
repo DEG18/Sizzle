@@ -1,14 +1,52 @@
-import React, { useState } from "react";
+import React, { useState , useEffect , useRef} from "react";
 import "./home.css";
 import Logo from "../../assets/sizzle.jpg";
 import { NavLink } from "react-router-dom";
+import API from "../../utils/API";
+import Restaurants from "../Restaurants/restaurants"
+// import { get } from "mongoose";
+// import { GET_WELCOME } from "../../context/actions";
+import { useGlobalContext } from "../../context/GlobalContext";
+// import axios from "axios";
+import { GET_REST } from "../../context/actions";
 
-const Home = ({ handleSubmit, history }) => {
-  const [searchEntry, setSearchEntry] = useState("");
 
-  const updateSearchInput = (e) => {
-    setSearchEntry(e.target.value);
+const Home = () => {
+
+  const [state, dispatch] = useGlobalContext();
+
+  const [term, setTerm] = useState("salty");
+  const [location, setLocation] = useState("New York");
+  let yelpdata;
+  // const getRest = async() => {
+  //   const { data } = await API.getRest(term,location);
+  //   yelpdata = data;
+  //   console.log(data)
+  //   console.log(yelpdata[0].name);
+  // }
+
+  useEffect(()=>{
+    // getRest();
+   API.getRest(term, location)
+      .then((res) => {
+        dispatch({
+          type: GET_REST,
+          restaurants: res.data
+      })
+    });
+  }, [term, location])
+  console.log(state.restaurants);
+  const termRef = useRef();
+  const locationRef = useRef();
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    // getRest();
+    setTerm(termRef.current.value);
+    setLocation(locationRef.current.value);
   };
+
+
   return (
     <div>
       <div>
@@ -16,20 +54,25 @@ const Home = ({ handleSubmit, history }) => {
       </div>
       <form
         className="search-form"
-        onSubmit={(e) => handleSubmit(e, history, searchEntry)}
+        onSubmit={(e) => handleFormSubmit(e)}
       >
         <input
           type="text"
-          name="search"
+          name="term"
           className="search"
           placeholder="Enter a flavor..."
-          onChange={updateSearchInput}
-          value={searchEntry}
+          ref={termRef}
+        />
+        <input
+          type="text"
+          name="location"
+          className="search"
+          placeholder="Enter a Name of State"
+          ref={locationRef}
         />
         <button
           type="submit"
-          className={`search-button ${searchEntry.trim() ? "active" : null}`}
-          disabled={!searchEntry.trim()}
+          className="search-button"
         >
           <svg height="32" width="32">
             <path
@@ -54,6 +97,8 @@ const Home = ({ handleSubmit, history }) => {
           <NavLink to="/sour">Sour</NavLink>
         </button>
       </div>
+      <Restaurants data={state.restaurants} />
+      {console.log(state.restaurants)}
     </div>
   );
 };

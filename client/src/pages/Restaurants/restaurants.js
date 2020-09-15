@@ -1,26 +1,11 @@
-import React, {  useEffect } from "react";
-import "./collections.css";
-import API from "../../utils/API";
-import { useGlobalContext } from "../../context/GlobalContext";
-import { GET_COLLECTION } from "../../context/actions";
+import React from "react"
 
-const Collections = () => {
-  const [state, dispatch] = useGlobalContext();
-  
-  var restaurants = new Array();
-  useEffect(()=>{
-    // getRest();
-   API.getCollection()
-    .then((res) => {
-      console.log(res.data);
-      dispatch({
-          type: GET_COLLECTION,
-          collection: res.data
-      })
-    });
-  }, [])
-  
-  state.collection.map((restaurant) => {
+function Restaurants(props) {
+    // console.log(props.data[0]);
+    var x = props.data[0];
+    console.log(x)
+    var restaurants = new Array();
+    props.data.map((restaurant,index) => {
         restaurants.push(
             <div className="row justify-content-center">
                 <div id="cardbox" className="card mb-3">
@@ -44,7 +29,7 @@ const Collections = () => {
                                     lead-in to additional content. This content is a little bit
                                     longer.
                             </p>
-                            <button>Delete</button>
+                            <button data-index={index}>SAVE</button>
                         </div>
                         </div>
                     </div>
@@ -53,14 +38,11 @@ const Collections = () => {
         )
     })
 
-  return (
-    //card
-    
-    <div className="cards container-fluid">
-      {console.log(restaurants)}
-      {restaurants}
-    </div>
-  );
-};
+    return (
+        <div className="cards container-fluid">
+            {restaurants}
+        </div>
+    )
+}
 
-export default Collections;
+export default Restaurants;

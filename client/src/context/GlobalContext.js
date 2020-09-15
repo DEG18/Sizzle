@@ -2,7 +2,9 @@ import React, { useReducer, createContext, useContext} from "react";
 import {
   LOGIN,
   LOGOUT,
-  GET_WELCOME
+  GET_REST,
+  GET_WELCOME,
+  GET_COLLECTION
 } from "./actions";
 
 // create the context
@@ -12,10 +14,15 @@ const { Provider } = GlobalContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case GET_WELCOME:
+    case GET_REST:
       return {
         ...state,
-        welcomeMessage: action.welcomeMessage
+        restaurants: action.restaurants
+      }
+    case GET_COLLECTION:
+      return {
+        ...state,
+        collection: action.collection
       }
     case LOGOUT: 
       return {
@@ -27,6 +34,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user
       };
+    case GET_WELCOME:
+      return {
+        ...state,
+        welcomeMessage: action.welcomeMessage
+      }
     default:
       return state;
   }
@@ -35,7 +47,9 @@ const reducer = (state, action) => {
 const GlobalProvider = ({value=[], ...props}) => {
   const [state, dispatch] = useReducer(reducer, {
     user: {},
-    welcomeMessage: ""
+    welcomeMessage: "",
+    restaurants: [],
+    collection:[]
   })
   return <Provider value={[state,dispatch]} {...props} />
 }
