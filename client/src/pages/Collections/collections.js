@@ -13,12 +13,12 @@ const Collections = () => {
     API.getCollection().then((res) => {
       console.log(res.data);
       dispatch({
-        type: GET_COLLECTION,
-        collection: res.data,
-      });
-    });
-  }, []);
-
+          type: GET_COLLECTION,
+          collection: res.data
+      })
+    }).catch(err => console.log(err));
+  }, [])
+  
   state.collection.map((restaurant) => {
     restaurants.push(
       <div className="row justify-content-center">
