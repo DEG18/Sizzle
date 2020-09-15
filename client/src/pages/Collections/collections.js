@@ -32,18 +32,14 @@ const Collections = () => {
                 <a href={restaurant.url}>
                   <h5 className="card-title">{restaurant.name}</h5>
                 </a>
-                ⭑⭑⭑⭑
+                Rating: {restaurant.rating}
                 <h6 className="card-title">
                   {" "}
-                  Bakeries, Custom Cakes, Cupcakes
                 </h6>
-                {restaurant.address[0] + "," + restaurant.address[1]}
+                Address: {restaurant.address}
                 <br></br>
                 <a href="tel:5554280940">{restaurant.phone}</a>
                 <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
                 </p>
                 <button type="button" class="btn delete btn-danger">
                   Delete

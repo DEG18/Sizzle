@@ -46,7 +46,7 @@ function Restaurants(props) {
                     <h6 className="card-title">
                     {" "}
                     </h6>
-                    {restaurant.address[0] + "," + restaurant.address[1]}
+                    Address: {restaurant.address[0] + "," + restaurant.address[1]}
                     <br></br>
                     {restaurant.phone}
                     <p className="card-text">
