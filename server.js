@@ -5,7 +5,7 @@ const routes = require("./routes");
 const passport = require("./authentication/passport");
 
 // setup the port and the express app
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 // middlewares for accepting post requests
